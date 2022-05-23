@@ -1,0 +1,112 @@
+{
+	"name": "canvas-lms-url-detection",
+	"version": "5.10.0",
+	"description": "Find out webpage is Canvas LMS page or not, Or else is it Canvas LMS Syllbus page? pagePerfect for your WebExtension or userscript.",
+	"keywords": [
+		"canvas",
+		"canvas-lms",
+		"page",
+		"routes",
+		"detect",
+		"test",
+		"extension"
+	],
+	"repository": "kalanaPerera/canvas-lms-url-detection",
+	"funding": "https://github.com/sponsors/kalanaperera",
+	"license": "MIT",
+	"author": "Kalana Perera",
+	"sideEffects": false,
+	"type": "module",
+	"main": "distribution/index.js",
+	"module": "distribution/index.js",
+	"files": [
+		"distribution/index.js",
+		"distribution/index.d.ts"
+	],
+	"alias": {
+		"./this-stuff-is-just-for-local-parcel-tests": "./package.json",
+		"./collector.js": "./collector.ts"
+	},
+	"scripts": {
+		"ava": "ava --timeout 30s",
+		"build": "rollup -c",
+		"demo:build": "parcel build --public-url ./ --out-dir demo/dist demo/index.html",
+		"demo:test": "svelte-check",
+		"demo:watch": "parcel --out-dir demo/dist demo/index.html",
+		"prepack": "rollup -c",
+		"test": "run-p build ava xo",
+		"watch": "rollup -c --watch",
+		"xo": "xo"
+	},
+	"browserslist": [
+		"last 2 versions",
+		"not IE <= 11"
+	],
+	"xo": {
+		"envs": [
+			"browser"
+		],
+		"ignore": [
+			"demo"
+		],
+		"overrides": [
+			{
+				"files": [
+					"*.ts"
+				],
+				"rules": {
+					"ava/assertion-arguments": "off",
+					"@typescript-eslint/dot-notation": "off",
+					"@typescript-eslint/no-non-null-assertion": "off",
+					"@typescript-eslint/no-unsafe-member-access": "off",
+					"@typescript-eslint/no-non-null-asserted-optional-chain": "off",
+					"@typescript-eslint/naming-convention": "off"
+				}
+			}
+		],
+		"rules": {
+			"camelcase": "off"
+		}
+	},
+	"ava": {
+		"environmentVariables": {
+			"TS_NODE_FILES": "true"
+		},
+		"extensions": {
+			"ts": "module"
+		},
+		"nodeArguments": [
+			"--loader=ts-node/esm",
+			"--experimental-specifier-resolution=node"
+		],
+		"nonSemVerExperiments": {
+			"configurableModuleFormat": true
+		}
+	},
+	"devDependencies": {
+		"@rollup/plugin-json": "^4.1.0",
+		"@rollup/plugin-node-resolve": "^13.0.6",
+		"@rollup/plugin-typescript": "^8.3.0",
+		"@sindresorhus/tsconfig": "^2.0.0",
+		"@types/estree": "^0.0.50",
+		"@types/jsdom": "^16.2.13",
+		"ava": "^3.15.0",
+		"github-reserved-names": "^2.0.4",
+		"jsdom": "^19.0.0",
+		"npm-run-all": "^4.1.5",
+		"parcel-bundler": "^1.12.4",
+		"parcel-plugin-svelte": "^4.0.9",
+		"rollup": "^2.60.2",
+		"rollup-plugin-terser": "^7.0.2",
+		"strip-indent": "^4.0.0",
+		"svelte": "^3.44.2",
+		"svelte-check": "^2.2.10",
+		"ts-node": "^10.4.0",
+		"tslib": "^2.3.1",
+		"typescript": "^4.5.2",
+		"xo": "^0.47.0"
+	},
+	"engines": {
+		"node": ">=12"
+	}
+}
