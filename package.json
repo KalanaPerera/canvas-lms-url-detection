@@ -1,6 +1,6 @@
 {
 	"name": "canvas-lms-url-detection",
-	"version": "5.10.0",
+	"version": "1.0.0",
 	"description": "Find out webpage is Canvas LMS page or not, Or else is it Canvas LMS Syllbus page? pagePerfect for your WebExtension or userscript.",
 	"keywords": [
 		"canvas",
