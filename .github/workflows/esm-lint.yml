@@ -1,6 +1,6 @@
 env:
   IMPORT_TEXT: import * as pageDetect from
-  NPM_MODULE_NAME: github-url-detection
+  NPM_MODULE_NAME: canvas-lms-url-detection
 
 # FILE GENERATED WITH: npx ghat fregante/ghatemplates/esm-lint
 # SOURCE: https://github.com/fregante/ghatemplates
